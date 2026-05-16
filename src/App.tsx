@@ -17,7 +17,7 @@ import { Contact } from './components/Contact';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#151515] text-[#ededed] selection:bg-[#D49474]/30 selection:text-white font-sans">
+    <div className="min-h-screen bg-[#151515] text-[#ededed] selection:bg-[#D49474]/30 selection:text-white font-sans overflow-x-hidden">
       <Navbar />
       <main>
         <Hero />

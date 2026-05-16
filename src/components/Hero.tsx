@@ -13,32 +13,27 @@ export function Hero() {
       {/* Decorative large low-opacity circle on the right */}
       <div className="absolute top-[40%] right-[-100px] w-[300px] h-[300px] bg-[#D49474]/5 rounded-full pointer-events-none z-0" />
 
-      <section id="home" className="pt-24 pb-6 md:pt-32 md:pb-8 px-6 md:px-12 lg:px-20 min-h-[90dvh] flex flex-col w-full mx-auto relative z-10 overflow-hidden">
+      <section id="home" className="pt-24 pb-6 md:pt-32 md:pb-8 px-6 md:px-12 lg:px-20 min-h-[100dvh] lg:h-dvh flex flex-col w-full mx-auto relative z-10 overflow-x-hidden lg:overflow-hidden">
         
-        {/* Top Part: Greeting */}
-        <div className="relative z-10 w-full mb-1">
+        {/* Top Part: Greeting (Shared) */}
+        <div className="relative z-50 w-full mb-1 sm:mb-2 text-center lg:text-left">
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-[#E5E5E5] text-lg md:text-xl lg:text-[22px] font-bold tracking-wide"
+            className="text-[#E5E5E5] text-[13px] sm:text-[15px] md:text-xl lg:text-[22px] font-bold tracking-normal lg:tracking-wide"
           >
             Hey, 👋 I'm a UIUX Designer
           </motion.h2>
         </div>
 
-        {/* Massive Title using flex justify-between for perfect stretch */}
-        <div className="relative z-10 w-full mt-2">
+        {/* Title: PC Version (Staggered) */}
+        <div className="hidden lg:block relative z-10 w-full mt-2">
           <motion.div 
             initial="hidden"
             animate="visible"
             variants={{
-              visible: {
-                transition: {
-                  staggerChildren: 0.05,
-                  delayChildren: 0.2
-                }
-              }
+              visible: { transition: { staggerChildren: 0.05, delayChildren: 0.2 } }
             }}
             className="w-full flex justify-between items-center font-display font-bold text-[#D49474] text-[13vw] leading-none uppercase tracking-tighter"
           >
@@ -58,17 +53,32 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Center overspilling image container */}
+        {/* Title: Mobile Version (Centered) */}
+        <div className="lg:hidden relative z-50 w-full mb-4 text-center">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="text-[#D49474] text-[10.5vw] sm:text-[9vw] font-display font-bold leading-none uppercase tracking-tighter px-1 whitespace-nowrap"
+          >
+            MUHAIMIN UIUX
+          </motion.h1>
+        </div>
+
+        {/* Profile Image - Rich & Full like PC */}
         <motion.div 
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
-          className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[400px] sm:w-[500px] lg:w-[650px] h-[70vh] max-h-[850px] z-30 pointer-events-none flex justify-center items-end"
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+          className="relative lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:bottom-0 w-[92%] max-w-[340px] sm:max-w-[480px] lg:w-[650px] lg:h-[70vh] lg:max-h-[850px] mx-auto z-30 flex justify-center items-end mt-2 lg:mt-0"
         >
-           <img 
+          {/* Mobile Glow */}
+          <div className="absolute inset-0 bg-[#D49474]/15 blur-[60px] rounded-full lg:hidden" />
+          
+          <img 
             src={profileImg} 
             alt="Muhaimin" 
-            className="h-full object-cover object-center border-b-0 mask-image-bottom drop-shadow-2xl opacity-100"
+            className="h-[38vh] lg:h-full w-full object-cover object-top mask-image-bottom drop-shadow-2xl z-10"
             style={{ 
               WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
               maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)'
@@ -76,72 +86,32 @@ export function Hero() {
           />
         </motion.div>
 
-        {/* Middle/Bottom Floating Elements */}
-        
-        {/* Decorative sphere (left) */}
-        <motion.div 
-          animate={{ 
-            y: [0, -20, 0],
-            rotate: [0, 5, 0]
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute left-10 lg:left-[5%] top-[55%] w-20 h-20 lg:w-28 lg:h-28 rounded-full shadow-[inset_-10px_-10px_20px_rgba(0,0,0,0.8),inset_10px_10px_20px_rgba(255,255,255,0.3)] opacity-100 z-20" 
-          style={{ background: 'radial-gradient(circle at 30% 30%, #555 0%, #151515 80%)' }} 
-        />
-        
-        {/* Play badge (right middle) */}
-        <motion.div 
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 1, type: "spring", stiffness: 260, damping: 20 }}
-          className="absolute right-6 lg:right-[8%] top-[48%] hidden lg:flex items-center justify-center w-[120px] h-[120px] z-40"
-        >
-          <svg viewBox="0 0 100 100" className="absolute w-full h-full animate-[spin_20s_linear_infinite]">
-            <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
-            <text className="text-[12px] font-bold tracking-[0.25em] fill-[#D49474] uppercase">
-              <textPath href="#circlePath" startOffset="0%">
-                NO LIMITS - NO WIRES • NO LIMITS - NO WIRES •
-              </textPath>
-            </text>
-          </svg>
-          <div className="bg-[#111] p-3.5 rounded-full border border-white/5 z-10 shadow-xl">
-            <Play className="fill-[#1A2544] text-[#1A2544] ml-0.5" size={18} />
-          </div>
-        </motion.div>
-
-        {/* Bottom row */}
-        <div className="relative z-40 w-full mt-auto pb-2 flex flex-col lg:flex-row justify-between items-end gap-10 lg:gap-0">
+        {/* Bottom row: Description & Contact - Compact but readable */}
+        <div className="relative z-40 w-full mt-6 lg:mt-auto pb-4 flex flex-col lg:flex-row justify-between items-center lg:items-end gap-6 lg:gap-0 text-center lg:text-left">
           
-          {/* Left: Contact Info */}
-          <div className="flex flex-col gap-2.5 text-sm md:text-[15px] font-bold text-[#E5E5E5] tracking-wide mt-32 lg:mt-0">
-            <p className="flex items-center gap-2">
-              <span className="opacity-90">Gmail:</span> muhaiminhussain30@gmail.com
-            </p>
-            <p className="flex items-center gap-2">
-              <span className="opacity-90">Whats app:</span> 01825297541
-            </p>
-          </div>
-
-          {/* Right: Intro & Links */}
-          <div className="flex flex-col gap-6 lg:text-left lg:max-w-md w-full lg:w-auto">
-            <p className="text-[#A3A3A3] text-[15px] md:text-base leading-relaxed">
-              I'm a UI/UX designer focused on creating clean, modern, and user-friendly digital experiences. I have experience working on live, remote, and freelance projects, combining strong visual design with usability to build interfaces that are both functional and impactful.
+          {/* Description & Links */}
+          <div className="flex flex-col gap-4 lg:gap-6 lg:max-w-md w-full lg:w-auto">
+            <p className="text-[#A3A3A3] text-[14px] md:text-base leading-snug lg:leading-relaxed px-6 lg:px-0">
+              I’m a UI/UX designer focused on creating clean, modern, and user-friendly digital experiences. I have experience working on live, remote, and freelance projects, combining strong visual design with usability to build interfaces that are both functional and impactful.
             </p>
             
-            <div className="flex flex-wrap items-center gap-4 text-[15px] font-medium text-[#c0c0c0]">
-              <span className="text-[#D49474] font-bold">/</span> <a href="https://www.figma.com/design/nmnrv3ZwdPWbVPR0aJHHUj/Figma-Portfolio?node-id=0-1&t=ROz5jdMTfxzyv1AT-1" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Figma</a>
-              <span className="text-[#D49474] font-bold">/</span> <a href="https://www.behance.net/Muhaimin_UIUX" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Behance</a>
-              <span className="text-[#D49474] font-bold">/</span> <a href="https://www.linkedin.com/in/syed-muhaimin-615336341/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Linkedin</a>
-              <span className="text-[#D49474] font-bold">/</span> <a href="https://dribbble.com/Syed_Muhaimin" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Dribbble</a>
-              <span className="text-[#D49474] font-bold">/</span> <a href="https://www.facebook.com/muhaimin.uiux/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Facebook</a>
-              <span className="text-[#D49474] font-bold">/</span> <a href="https://www.instagram.com/muhaimin_uiux/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-[13px] lg:text-[14px] font-bold text-[#c0c0c0] tracking-wide">
+              <span className="flex items-center gap-2"><span className="text-[#D49474] font-bold">/</span> <a href="#" className="hover:text-white transition-colors">Figma</a></span>
+              <span className="flex items-center gap-2"><span className="text-[#D49474] font-bold">/</span> <a href="#" className="hover:text-white transition-colors">Behance</a></span>
+              <span className="flex items-center gap-2"><span className="text-[#D49474] font-bold">/</span> <a href="#" className="hover:text-white transition-colors">Linkedin</a></span>
+              <span className="flex items-center gap-2"><span className="text-[#D49474] font-bold">/</span> <a href="#" className="hover:text-white transition-colors">Dribbble</a></span>
             </div>
           </div>
 
+          {/* Left/Mobile-Bottom: Contact Info */}
+          <div className="flex flex-col gap-2.5 text-sm md:text-[15px] font-bold text-[#E5E5E5] tracking-wide order-2 lg:order-1 mt-4 lg:mt-0">
+            <p className="flex flex-col lg:flex-row items-center gap-1 lg:gap-2">
+              <span className="opacity-70 font-medium">Gmail:</span> muhaiminhussain30@gmail.com
+            </p>
+            <p className="flex flex-col lg:flex-row items-center gap-1 lg:gap-2">
+              <span className="opacity-70 font-medium">Whats app:</span> 01825297541
+            </p>
+          </div>
         </div>
 
       </section>

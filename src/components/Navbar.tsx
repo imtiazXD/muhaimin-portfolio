@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Download, Sparkle } from 'lucide-react';
 import { useState } from 'react';
 
@@ -14,8 +14,8 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="absolute top-0 inset-x-0 z-50">
-      <nav className="w-full mx-auto px-6 lg:px-20 h-24 flex items-center justify-between border-b border-white/5">
+    <header className="absolute top-0 inset-x-0 z-[100]">
+      <nav className="w-full mx-auto px-6 lg:px-20 h-20 md:h-24 flex items-center justify-between border-b border-white/5 backdrop-blur-sm lg:backdrop-blur-none bg-[#151515]/20 lg:bg-transparent">
         <a href="#home" className="flex items-center gap-2 text-lg font-display font-bold tracking-widest text-[#D1D1D1] hover:text-white transition-colors">
           MUHAIMIN <Sparkle className="text-[#D49474] w-5 h-5 fill-current" /> UIUX
         </a>
@@ -53,41 +53,42 @@ export function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="lg:hidden p-2 text-[#A3A3A3] hover:text-white"
+          className="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all active:scale-90"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </nav>
 
-      {/* Mobile Nav */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="lg:hidden absolute top-24 left-0 w-full bg-[#111] border-b border-white/10 py-4 px-6 flex flex-col gap-4 shadow-2xl"
-        >
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className={`text-lg font-medium ${item.active ? 'text-[#D49474]' : 'text-[#A3A3A3]'} hover:text-white`}
-              onClick={() => setIsOpen(false)}
-            >
-              {item.name}
-            </a>
-          ))}
-          <div className="flex flex-col gap-4 mt-4 pt-4 border-t border-white/10">
-            <a href="#cv" className="flex items-center gap-3 text-sm font-bold text-white uppercase">
+      {/* Mobile Nav Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="lg:hidden absolute top-[calc(100%+12px)] left-6 right-6 bg-[#1A1A1A]/95 backdrop-blur-2xl border border-white/10 rounded-[24px] py-8 px-6 flex flex-col items-center gap-6 shadow-2xl z-[110]"
+          >
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className={`text-lg font-bold ${item.active ? 'text-[#D49474]' : 'text-[#A3A3A3]'} hover:text-white`}
+                onClick={() => setIsOpen(false)}
+              >
+                {item.name}
+              </a>
+            ))}
+            <div className="w-full h-px bg-white/10 my-2" />
+            <a href="#cv" className="flex items-center gap-3 text-sm font-bold text-white uppercase tracking-widest">
               Get the CV <Download size={18} />
             </a>
-            <a href="#contact" className="bg-[#D49474] text-black px-6 py-3 rounded text-center font-bold">
-              Get started
+            <a href="#contact" className="w-full bg-[#D49474] text-black py-4 rounded-2xl text-center font-bold tracking-widest text-sm shadow-lg">
+              GET STARTED
             </a>
-          </div>
-        </motion.div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

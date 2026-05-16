@@ -70,7 +70,7 @@ export function Services() {
         </motion.div>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
           <motion.div
             key={service.id}
@@ -78,61 +78,47 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className={`flex flex-col rounded-[32px] p-2 gap-2 ${
-              service.highlight 
-                ? 'bg-[#B45A2C]' 
-                : 'bg-[#E5E5E5]'
-            }`}
+            className="group flex flex-col bg-white rounded-[32px] p-[2px] transition-all duration-500 cursor-pointer"
           >
-            {/* Header */}
-            <div className={`px-6 py-4 flex justify-between items-center rounded-[24px] ${
-              service.highlight ? 'bg-[#D49474]' : 'bg-[#121212]'
-            }`}>
-              <h3 className={`text-xl front-medium tracking-wide ${
-                 service.highlight ? 'text-white font-semibold' : 'text-[#E5E5E5]'
-              }`}>
-                {service.title}
-              </h3>
-              <div className="bg-[#E5E5E5] w-10 h-10 rounded-xl flex items-center justify-center shrink-0">
-                <Monitor className={`size-5 stroke-[2.5] ${service.highlight ? 'text-[#D49474]' : 'text-[#D49474]'}`} />
-              </div>
-            </div>
-
-            {/* Body */}
-            <div className={`p-6 flex flex-col flex-1 rounded-[24px] ${
-              service.highlight ? 'bg-[#D49474]' : 'bg-[#121212]'
-            }`}>
-              <p className={`text-sm mb-8 leading-[1.7] ${
-                service.highlight ? 'text-white/95' : 'text-[#A3A3A3]'
-              }`}>
-                {service.description}
-              </p>
-
-              <div className="flex gap-3 mb-8">
-                {service.images.map((img, i) => (
-                  <div key={i} className="flex-1 aspect-[4/5] rounded-2xl overflow-hidden bg-black/20">
-                    <img 
-                      src={img} 
-                      alt={`${service.title} example ${i + 1}`} 
-                      className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity hover:scale-105 duration-500"
-                    />
-                  </div>
-                ))}
+            <div className="flex flex-col flex-1 bg-[#121212] rounded-[30px] p-2 gap-2 transition-all duration-500">
+              {/* Header Box */}
+              <div className="px-6 py-5 flex justify-between items-center bg-[#1A1A1A] group-hover:bg-[#DB7C49] rounded-[24px] transition-all duration-500">
+                <h3 className="text-xl md:text-2xl font-bold text-white tracking-wide">
+                  {service.title}
+                </h3>
+                <div className="bg-white w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-lg">
+                  <Monitor className="size-5 stroke-[2.5] text-[#DB7C49]" />
+                </div>
               </div>
 
-              <div className="flex flex-wrap gap-2 mt-auto">
-                {service.tags.map(tag => (
-                  <span 
-                    key={tag}
-                    className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide ${
-                      service.highlight 
-                        ? 'bg-transparent border border-white/40 text-white' 
-                        : 'bg-[#E5E5E5] text-black'
-                    }`}
-                  >
-                    {tag}
-                  </span>
-                ))}
+              {/* Body Box */}
+              <div className="p-6 flex flex-col flex-1 bg-[#1A1A1A] group-hover:bg-[#DB7C49] rounded-[24px] transition-all duration-500">
+                <p className="text-[#A3A3A3] group-hover:text-white text-sm md:text-[15px] mb-8 leading-[1.8]">
+                  {service.description}
+                </p>
+
+                <div className="flex gap-3 mb-8">
+                  {service.images.map((img, i) => (
+                    <div key={i} className="flex-1 aspect-[4/5] rounded-2xl overflow-hidden bg-black/40">
+                      <img 
+                        src={img} 
+                        alt={`${service.title} example ${i + 1}`} 
+                        className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-700 group-hover:scale-110"
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {service.tags.map(tag => (
+                    <span 
+                      key={tag}
+                      className="px-4 py-2 rounded-full text-[11px] font-bold tracking-wider uppercase bg-white text-black group-hover:bg-transparent group-hover:text-white group-hover:border group-hover:border-white/60 transition-all duration-500"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>

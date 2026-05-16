@@ -1,27 +1,19 @@
 import { motion } from 'motion/react';
 
-import carelink from '../assest/muhaimin personal portfolio website/Carelink.jpg';
-import blab from '../assest/muhaimin personal portfolio website/Digital agency B-Lab.jpg';
-import dmin from '../assest/muhaimin personal portfolio website/Dmin.jpg';
-import hstr from '../assest/muhaimin personal portfolio website/HSTR.jpg';
-import visuverse from '../assest/muhaimin personal portfolio website/VisuVerse.jpg';
-import careease from '../assest/muhaimin personal portfolio website/CareEase.png';
+import soso from '../assest/muhaimin personal portfolio website/So-So.png';
 import korto from '../assest/muhaimin personal portfolio website/Korto.png';
-import mobileDesign from '../assest/muhaimin personal portfolio website/Mobile app Design.png';
-import webDesign from '../assest/muhaimin personal portfolio website/Web Design.jpg';
+import heyazah from '../assest/muhaimin personal portfolio website/Heyazah.jpg';
+import careease from '../assest/muhaimin personal portfolio website/CareEase.png';
+import healthcare from '../assest/muhaimin personal portfolio website/Heath Care.jpg';
 import morph from '../assest/muhaimin personal portfolio website/Morph.png';
 
 
 const galleryImages = [
-  carelink,
-  blab,
-  dmin,
-  hstr,
-  visuverse,
-  careease,
+  soso,
   korto,
-  mobileDesign,
-  webDesign,
+  heyazah,
+  careease,
+  healthcare,
   morph
 ];
 
@@ -62,7 +54,7 @@ export function WorkGallery() {
                   <img 
                     src={src} 
                     alt={`Work preview ${idx}`} 
-                    className="w-full h-auto object-cover aspect-[16/10] rounded-sm transition-transform duration-700 group-hover:scale-[1.01]"
+                    className="w-full h-auto object-top rounded-sm transition-transform duration-700 group-hover:scale-[1.01]"
                     loading="lazy"
                   />
                 </div>

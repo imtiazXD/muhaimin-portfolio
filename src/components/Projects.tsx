@@ -1,79 +1,61 @@
 import { motion } from 'motion/react';
 
 // Import images from assets
-import carelinkImg from '../assest/muhaimin personal portfolio website/Carelink.jpg';
-import kortoImg from '../assest/muhaimin personal portfolio website/Korto.jpg';
-import morphImg from '../assest/muhaimin personal portfolio website/Morph.png';
-import healthcareImg from '../assest/muhaimin personal portfolio website/Heath Care.jpg';
-import blabImg from '../assest/muhaimin personal portfolio website/Digital agency B-Lab.jpg';
-import visuverseImg from '../assest/muhaimin personal portfolio website/VisuVerse.jpg';
+import sosoImg from '../assest/muhaimin personal portfolio website/So-So.png';
+import kortoImg from '../assest/muhaimin personal portfolio website/Korto.png';
+import heyazahImg from '../assest/muhaimin personal portfolio website/Heyazah.jpg';
 import careeaseImg from '../assest/muhaimin personal portfolio website/CareEase.png';
-import mobileDesignImg from '../assest/muhaimin personal portfolio website/Mobile app Design.png';
+import healthcareImg from '../assest/muhaimin personal portfolio website/Heath Care.jpg';
+import morphImg from '../assest/muhaimin personal portfolio website/Morph.png';
 
 
 const projects = [
   {
-    title: 'Carelink',
-    description: 'Designed a comprehensive healthcare platform focused on patient care and medical services, featuring intuitive navigation and a professional, trustworthy aesthetic.',
-    image: carelinkImg,
-    platform: 'Figma',
-    platformIcon: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg',
-    link: '#'
-  },
-  {
-    title: 'CareEase',
-    description: 'A streamlined healthcare application designed to simplify patient management and appointment scheduling, focusing on user accessibility and efficient data handling.',
-    image: careeaseImg,
+    title: 'So-So',
+    description: "UI Design - It's a holistic healthcare and wellness platform guide focused on sustainable and patient-centered solutions.",
+    image: sosoImg,
     platform: 'Figma',
     platformIcon: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg',
     link: '#'
   },
   {
     title: 'Korto',
-    description: 'Designed a modern healthcare website focused on eye care services, creating a clean and trustworthy user experience with accessible layouts, smooth navigation, and patient-friendly design.',
+    description: "UI Design - It's a clear vision care website for eye health, featuring modern layouts and intuitive patient-friendly design.",
     image: kortoImg,
     platform: 'Figma',
     platformIcon: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg',
     link: '#'
   },
   {
-    title: 'Morph',
-    description: 'Designed a creative and collaborative digital experience that encourages idea sharing, teamwork, and seamless interaction through modern and engaging user interfaces.',
-    image: morphImg,
+    title: 'Heyazah',
+    description: "UI Design - It's a real estate development platform showcasing high-impact projects with a focus on luxury and functionality.",
+    image: heyazahImg,
+    platform: 'Figma',
+    platformIcon: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg',
+    link: '#'
+  },
+  {
+    title: 'CareEase',
+    description: "UI Design - It's a comprehensive medical service platform designed to simplify healthcare workflows and patient management.",
+    image: careeaseImg,
     platform: 'Figma',
     platformIcon: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg',
     link: '#'
   },
   {
     title: 'Health Care',
-    description: 'Designed a clean and user-friendly healthcare experience focused on accessibility, patient trust, and smooth interaction through modern UI and intuitive navigation.',
+    description: "UI Design - It's a future-forward robotic healthcare experience reimagining the digital health ecosystem.",
     image: healthcareImg,
     platform: 'Figma',
     platformIcon: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg',
     link: '#'
   },
   {
-    title: 'Mobile App Design',
-    description: 'A high-fidelity mobile application design focusing on modern aesthetics, smooth transitions, and user-centric navigation for a seamless digital experience.',
-    image: mobileDesignImg,
+    title: 'Morph',
+    description: "Case Study - It's a smart home application focusing on seamless device integration and intuitive home automation.",
+    image: morphImg,
     platform: 'Figma',
     platformIcon: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg',
-    link: '#'
-  },
-  {
-    title: 'B-Lab Digital Agency',
-    description: 'A modern and bold digital agency website design, showcasing services and creative work through high-impact visuals and streamlined user flows.',
-    image: blabImg,
-    platform: 'Behance',
-    platformIcon: 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Behance_logo.svg',
-    link: '#'
-  },
-  {
-    title: 'VisuVerse',
-    description: 'A futuristic and immersive visual experience designed for creative professionals, focusing on portfolio showcase and interactive design elements.',
-    image: visuverseImg,
-    platform: 'Behance',
-    platformIcon: 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Behance_logo.svg',
     link: '#'
   }
 ];
