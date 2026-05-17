@@ -29,9 +29,10 @@ export function Contact() {
                 href="#footer-contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-16 h-16 sm:w-24 sm:h-24 lg:w-36 lg:h-36 bg-[#D49474] rounded-full flex items-center justify-center text-black text-[8px] sm:text-[11px] lg:text-[15px] font-bold shadow-xl hover:bg-[#c58565] transition-colors normal-case shrink-0"
+                className="w-16 h-16 sm:w-24 sm:h-24 lg:w-36 lg:h-36 bg-[#D49474] rounded-full flex flex-col items-center justify-center text-black text-[8px] sm:text-[11px] lg:text-[15px] font-bold shadow-xl hover:bg-[#c58565] transition-colors normal-case shrink-0 tracking-normal leading-[1.1]"
               >
-                Start Project
+                <span>Start</span>
+                <span>Project</span>
               </motion.a>
             </div>
             <span className="block whitespace-nowrap">THE NEXT LEVEL?</span>
