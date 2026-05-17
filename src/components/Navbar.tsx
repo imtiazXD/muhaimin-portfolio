@@ -40,7 +40,7 @@ export function Navbar() {
 
         {/* Right Nav */}
         <div className="hidden lg:flex items-center gap-8">
-          <a href="#cv" className="flex items-center gap-3 text-[13px] font-bold tracking-widest text-[#e5e5e5] hover:text-white transition-colors">
+          <a href="https://drive.google.com/file/d/1Wb0R2hiIc1dOELBLyHXM05W8oYXxZ6cR/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[13px] font-bold tracking-widest text-[#e5e5e5] hover:text-white transition-colors">
             GET THE CV 
             <span className="w-9 h-9 rounded-full bg-white text-black flex items-center justify-center shadow-lg transition-transform hover:scale-105">
               <Download size={18} strokeWidth={2.5} />
@@ -80,7 +80,7 @@ export function Navbar() {
               </a>
             ))}
             <div className="w-full h-px bg-white/10 my-2" />
-            <a href="#cv" className="flex items-center gap-3 text-sm font-bold text-white uppercase tracking-widest">
+            <a href="https://drive.google.com/file/d/1Wb0R2hiIc1dOELBLyHXM05W8oYXxZ6cR/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm font-bold text-white uppercase tracking-widest">
               Get the CV <Download size={18} />
             </a>
             <a href="#contact" className="w-full bg-[#D49474] text-black py-4 rounded-2xl text-center font-bold tracking-widest text-sm shadow-lg">

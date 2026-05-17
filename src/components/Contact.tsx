@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Sparkle, Instagram, Facebook, Linkedin, Mail, Figma, Dribbble } from 'lucide-react';
+import { Sparkle, Instagram, Facebook, Linkedin, Mail, Figma, Dribbble, Globe } from 'lucide-react';
 
 export function Contact() {
   return (
@@ -26,7 +26,7 @@ export function Contact() {
             <div className="flex items-center justify-center gap-2 sm:gap-5 lg:gap-6 my-1 sm:my-2 lg:my-3">
               <span className="whitespace-nowrap">IDEA TO</span>
               <motion.a 
-                href="mailto:muhaiminhussain30@gmail.com"
+                href="#footer-contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-16 h-16 sm:w-24 sm:h-24 lg:w-36 lg:h-36 bg-[#D49474] rounded-full flex items-center justify-center text-black text-[8px] sm:text-[11px] lg:text-[15px] font-bold shadow-xl hover:bg-[#c58565] transition-colors normal-case shrink-0"
@@ -38,175 +38,115 @@ export function Contact() {
           </h2>
         </div>
 
-        {/* ============================== */}
-        {/* MOBILE LAYOUT (Preserved) */}
-        {/* ============================== */}
-        <div className="w-full lg:hidden flex flex-col gap-6 border-t border-white/5 pt-8">
+        {/* Fully Responsive Footer Layout */}
+        <div id="footer-contact" className="w-full flex flex-col pt-8 lg:pt-12 pb-8 mt-8 lg:mt-24">
           
-          {/* Logo & Tagline */}
-          <div className="flex flex-col items-center text-center gap-2 mb-2">
-            <div className="flex items-center gap-2 text-base font-display font-bold tracking-widest text-[#D1D1D1]">
-              <Sparkle className="text-[#D49474] w-4 h-4 fill-current" /> Muhaimin UIUX
+          {/* Top Section: Logo & Links */}
+          <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start w-full gap-8 lg:gap-0">
+            
+            {/* Logo & Text */}
+            <div className="flex flex-col items-center lg:items-start gap-2 lg:gap-4 w-full lg:max-w-[45%] text-center lg:text-left">
+              <div className="flex items-center gap-2 text-[14px] lg:text-xl font-display font-bold text-[#D1D1D1]">
+                <Sparkle className="text-[#D49474] w-4 h-4 lg:w-5 lg:h-5 fill-current" /> Muhaimin UIUX
+              </div>
+              <p className="text-[#A3A3A3] text-[11px] lg:text-[15px] font-light leading-relaxed mt-1 lg:mt-4 max-w-[250px] lg:max-w-none">
+                Clean design for better user experiences.
+              </p>
             </div>
-            <p className="text-[#A3A3A3] text-xs font-light max-w-[250px] leading-relaxed">
-              Clean design for better user experiences.
-            </p>
-          </div>
 
-          {/* Links 3-Column Grid */}
-          <div className="grid grid-cols-3 gap-0 py-6 border-y border-white/5 w-full">
-            {/* Column 1: Navigation */}
-            <div className="flex flex-col gap-4 text-[11px] text-left pr-2">
-              {['Home', 'About', 'Experience', 'Service'].map((item) => (
-                <a key={item} href={`#${item.toLowerCase()}`} className="text-[#A3A3A3] hover:text-white transition-colors">{item}</a>
-              ))}
-            </div>
-            
-            {/* Column 2: Portfolio */}
-            <div className="flex flex-col gap-4 text-[11px] text-left border-l border-white/5 pl-4 pr-2">
-              {['Project', 'Skill', 'Testimonial', 'Faq'].map((item) => (
-                <a key={item} href={`#${item.toLowerCase()}`} className="text-[#A3A3A3] hover:text-white transition-colors">{item}</a>
-              ))}
-            </div>
-            
-            {/* Column 3: Social Icons Grid */}
-            <div className="flex justify-center border-l border-white/5 pl-4">
-              <div className="grid grid-cols-2 gap-2.5 content-start">
-                <a href="#" className="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center text-[#A3A3A3] hover:border-[#D49474] hover:text-[#D49474] transition-all">
-                  <Figma size={12} />
-                </a>
-                <a href="#" className="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center text-[#A3A3A3] hover:border-[#D49474] hover:text-[#D49474] transition-all">
-                  <Instagram size={12} />
-                </a>
-                <a href="#" className="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center text-[#A3A3A3] hover:border-[#D49474] hover:text-[#D49474] transition-all font-bold text-[9px]">
-                  Bē
-                </a>
-                <a href="#" className="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center text-[#A3A3A3] hover:border-[#D49474] hover:text-[#D49474] transition-all">
-                  <Facebook size={12} />
-                </a>
-                <a href="#" className="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center text-[#A3A3A3] hover:border-[#D49474] hover:text-[#D49474] transition-all">
-                  <Dribbble size={12} />
-                </a>
-                <a href="#" className="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center text-[#A3A3A3] hover:border-[#D49474] hover:text-[#D49474] transition-all font-bold text-[9px]">
-                  W
-                </a>
-                <a href="#" className="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center text-[#A3A3A3] hover:border-[#D49474] hover:text-[#D49474] transition-all">
-                  <Linkedin size={12} />
-                </a>
-                <a href="#" className="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center text-[#A3A3A3] hover:border-[#D49474] hover:text-[#D49474] transition-all">
-                  <Mail size={12} />
-                </a>
+            {/* Links & Icons Grid */}
+            <div className="grid grid-cols-3 lg:flex lg:gap-24 w-full lg:w-auto py-6 lg:py-0 border-y border-white/5 lg:border-none">
+              
+              {/* Col 1 */}
+              <div className="flex flex-col gap-4 lg:gap-8 pr-2 lg:pr-0">
+                {['Home', 'About', 'Experience', 'Service'].map((item) => (
+                  <a key={item} href={`#${item.toLowerCase()}`} className="text-[#A3A3A3] hover:text-white transition-colors text-[11px] lg:text-[15px] font-medium">{item}</a>
+                ))}
+              </div>
+              
+              {/* Col 2 */}
+              <div className="flex flex-col gap-4 lg:gap-8 border-l border-white/5 lg:border-none pl-4 lg:pl-0 pr-2 lg:pr-0">
+                {['Project', 'Skill', 'Testimonial', 'Faq'].map((item) => (
+                  <a key={item} href={`#${item.toLowerCase()}`} className="text-[#A3A3A3] hover:text-white transition-colors text-[11px] lg:text-[15px] font-medium">{item}</a>
+                ))}
+              </div>
+              
+              {/* Col 3: Icons */}
+              <div className="flex justify-center lg:justify-start border-l border-white/5 pl-4 lg:pl-12">
+                <div className="grid grid-cols-2 gap-3 lg:gap-5 content-start">
+                  <a href="https://www.figma.com/design/nmnrv3ZwdPWbVPR0aJHHUj/Figma-Portfolio?node-id=0-1&p=f&t=T2ZxAhUdLr0NaVGb-0" target="_blank" rel="noopener noreferrer" className="w-7 h-7 lg:w-[42px] lg:h-[42px] rounded-full border border-white/10 flex items-center justify-center text-[#A3A3A3] hover:border-[#D49474] hover:text-[#D49474] transition-all">
+                    <Figma className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
+                  </a>
+                  <a href="https://www.instagram.com/muhaimin_uiux/" target="_blank" rel="noopener noreferrer" className="w-7 h-7 lg:w-[42px] lg:h-[42px] rounded-full border border-white/10 flex items-center justify-center text-[#A3A3A3] hover:border-[#D49474] hover:text-[#D49474] transition-all">
+                    <Instagram className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
+                  </a>
+                  <a href="https://www.behance.net/Muhaimin_UIUX" target="_blank" rel="noopener noreferrer" className="w-7 h-7 lg:w-[42px] lg:h-[42px] rounded-full border border-white/10 flex items-center justify-center text-[#A3A3A3] hover:border-[#D49474] hover:text-[#D49474] transition-all font-bold text-[10px] lg:text-[14px]">
+                    Bē
+                  </a>
+                  <a href="https://www.facebook.com/muhaimin.uiux/" target="_blank" rel="noopener noreferrer" className="w-7 h-7 lg:w-[42px] lg:h-[42px] rounded-full border border-white/10 flex items-center justify-center text-[#A3A3A3] hover:border-[#D49474] hover:text-[#D49474] transition-all">
+                    <Facebook className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
+                  </a>
+                  <a href="https://dribbble.com/Syed_Muhaimin" target="_blank" rel="noopener noreferrer" className="w-7 h-7 lg:w-[42px] lg:h-[42px] rounded-full border border-white/10 flex items-center justify-center text-[#A3A3A3] hover:border-[#D49474] hover:text-[#D49474] transition-all">
+                    <Dribbble className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
+                  </a>
+                  <a href="https://wa.me/8801825297541" target="_blank" rel="noopener noreferrer" className="w-7 h-7 lg:w-[42px] lg:h-[42px] rounded-full border border-white/10 flex items-center justify-center text-[#A3A3A3] hover:border-[#D49474] hover:text-[#D49474] transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 lg:w-4 lg:h-4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  </a>
+                  <a href="https://www.linkedin.com/in/syed-muhaimin-615336341/" target="_blank" rel="noopener noreferrer" className="w-7 h-7 lg:w-[42px] lg:h-[42px] rounded-full border border-white/10 flex items-center justify-center text-[#A3A3A3] hover:border-[#D49474] hover:text-[#D49474] transition-all">
+                    <Linkedin className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
+                  </a>
+                  <a href="mailto:muhaiminhussain30@gmail.com" className="w-7 h-7 lg:w-[42px] lg:h-[42px] rounded-full border border-white/10 flex items-center justify-center text-[#A3A3A3] hover:border-[#D49474] hover:text-[#D49474] transition-all">
+                    <Mail className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Newsletter Section (Mobile) */}
-          <div className="w-full flex flex-col items-center text-center py-8 max-w-[400px] mx-auto">
-            <h3 className="text-base font-bold text-[#E5E5E5] mb-2">Let's Build Something Great</h3>
-            <p className="text-[#A3A3A3] text-[10px] leading-relaxed mb-6">
-              Get updates about my latest UI/UX projects, design insights, and creative work. Delivered occasionally with no unnecessary spam.
-            </p>
-            
-            <div className="w-full flex flex-row gap-2 mb-4">
-              <input 
-                type="email" 
-                placeholder="example@gmail.com"
-                className="flex-1 bg-transparent border border-white/10 rounded-lg px-3 py-2 text-[11px] text-white focus:outline-none focus:border-[#A3A3A3] transition-colors"
-              />
-              <button className="bg-transparent border border-white/10 hover:bg-white/10 text-white px-4 py-2 rounded-lg font-bold text-[11px] transition-all active:scale-95">
-                Join
-              </button>
-            </div>
-            
-            <label className="flex items-center justify-center gap-2 text-[9px] text-[#A3A3A3] cursor-pointer">
-              <input type="checkbox" className="w-3 h-3 rounded border-white/10 bg-white/5 accent-white/20" />
-              I agree to receive updates and design insights.
-            </label>
-          </div>
-        </div>
+          {/* Separator (Desktop only) */}
+          <div className="hidden lg:block w-full h-px bg-white/10 my-16" />
 
-        {/* ============================== */}
-        {/* DESKTOP LAYOUT (New 4-Column Design) */}
-        {/* ============================== */}
-        <div className="hidden lg:flex flex-col w-full">
-          {/* 4-Column Links Grid */}
-          <div className="grid grid-cols-4 gap-8 py-20 w-full mt-8">
-            {/* Column 1 */}
-            <div className="flex flex-col gap-6">
-              <h4 className="text-[#D49474] font-bold text-sm mb-2 tracking-wide">Quick links</h4>
-              {['Home', 'About', 'Experience', 'Service', 'Project', 'Skill', 'Testimonial'].map((item) => (
-                <a key={item} href={`#${item.toLowerCase()}`} className="text-white font-bold text-sm hover:text-[#D49474] transition-colors">{item}</a>
-              ))}
-            </div>
+          {/* Middle Section: Newsletter */}
+          <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start w-full gap-6 lg:gap-0 mt-8 lg:mt-0">
             
-            {/* Column 2 */}
-            <div className="flex flex-col gap-6">
-              <h4 className="text-[#D49474] font-bold text-sm mb-2 tracking-wide">Portfolio</h4>
-              {['Figma', 'Behance', 'Dribbble'].map((item) => (
-                <a key={item} href="#" className="text-white font-bold text-sm hover:text-[#D49474] transition-colors">{item}</a>
-              ))}
-            </div>
-            
-            {/* Column 3 */}
-            <div className="flex flex-col gap-6">
-              <h4 className="text-[#D49474] font-bold text-sm mb-2 tracking-wide">Social Link</h4>
-              {['Linkedin', 'Instagraam', 'Facebook'].map((item) => (
-                <a key={item} href="#" className="text-white font-bold text-sm hover:text-[#D49474] transition-colors">{item}</a>
-              ))}
-            </div>
-            
-            {/* Column 4 */}
-            <div className="flex flex-col gap-6">
-              <h4 className="text-[#D49474] font-bold text-sm mb-2 tracking-wide">Contact</h4>
-              <a href="mailto:muhaiminhussain30@gmail.com" className="text-white font-bold text-sm hover:text-[#D49474] transition-colors">muhaiminhussain30@gmail.com</a>
-              <a href="tel:01825297541" className="text-white font-bold text-sm hover:text-[#D49474] transition-colors">01825297541</a>
-              <a href="#" className="text-white font-bold text-sm hover:text-[#D49474] transition-colors">Whatsapp</a>
-            </div>
-          </div>
-
-          {/* Desktop Separator */}
-          <div className="w-full h-px bg-white/10" />
-
-          {/* Desktop Newsletter Section */}
-          <div className="w-full flex justify-between items-center py-16">
-            {/* Left: Text */}
-            <div className="max-w-md">
-              <h3 className="text-xl font-bold text-[#E5E5E5] mb-4">Let's Build Something Great</h3>
-              <p className="text-[#A3A3A3] text-sm leading-relaxed">
+            {/* Left: Newsletter Text */}
+            <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-[350px] lg:max-w-[450px]">
+              <h3 className="text-[14px] lg:text-xl font-bold text-[#E5E5E5] mb-2 lg:mb-4">Let's Build Something Great</h3>
+              <p className="text-[#A3A3A3] text-[10px] lg:text-[14px] leading-[1.6]">
                 Get updates about my latest UI/UX projects, design insights, and creative work. Delivered occasionally with no unnecessary spam.
               </p>
             </div>
             
-            {/* Right: Form */}
-            <div className="flex flex-col gap-4">
-              <div className="flex gap-4">
+            {/* Right: Newsletter Form */}
+            <div className="flex flex-col gap-3 lg:gap-4 items-center lg:items-start w-full lg:w-auto">
+              <div className="flex gap-2 lg:gap-4 w-full justify-center lg:justify-start">
                 <input 
                   type="email" 
                   placeholder="example@gmail.com"
-                  className="w-[300px] bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#A3A3A3] transition-colors"
+                  className="w-[200px] lg:w-[320px] bg-transparent border border-white/10 rounded-lg lg:rounded-xl px-4 py-2 lg:px-5 lg:py-3.5 text-[11px] lg:text-[14px] text-white focus:outline-none focus:border-[#A3A3A3] transition-colors"
                 />
-                <button className="bg-[#E5E5E5] text-black px-10 py-3 rounded-xl font-bold text-sm hover:bg-white transition-all active:scale-95 shadow-lg">
+                <button className="bg-transparent border border-white/10 text-white px-6 py-2 lg:px-10 lg:py-3.5 rounded-lg lg:rounded-xl font-bold text-[11px] lg:text-[14px] hover:bg-white/5 transition-all active:scale-95">
                   Join
                 </button>
               </div>
-              <label className="flex items-center gap-3 text-[12px] text-[#A3A3A3] cursor-pointer">
-                <input type="checkbox" className="w-4 h-4 rounded border-white/10 bg-white/5 accent-[#D49474]" />
+              <label className="flex items-center gap-2 lg:gap-3 text-[9px] lg:text-[13px] text-[#A3A3A3] cursor-pointer mt-1">
+                <input type="checkbox" className="w-3.5 h-3.5 lg:w-4 lg:h-4 rounded border-white/10 bg-white/5 accent-[#D49474]" />
                 I agree to receive updates and design insights.
               </label>
             </div>
           </div>
-        </div>
 
-        {/* Bottom Bar (Shared for both Mobile and Desktop) */}
-        <div className="w-full flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-6 py-6 lg:py-10 text-[9px] lg:text-[12px] text-[#A3A3A3] font-medium border-t border-white/5">
-          <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-center lg:text-left">
-            <p>©2024 Viroka, Designed by <span className="text-[#E5E5E5]">Muhaimin UIUX</span></p>
-            <span className="hidden sm:inline text-white/20">|</span>
-            <p>Developed by <span className="text-[#E5E5E5]">Imtiaz Ahmed</span></p>
-          </div>
-          <div className="flex gap-4 lg:gap-6 mt-2 lg:mt-0">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+          {/* Bottom Section */}
+          <div className="w-full flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-0 mt-12 lg:mt-24 text-[10px] lg:text-[13px] text-[#A3A3A3] font-medium pb-4 border-t border-white/5 lg:border-none pt-6 lg:pt-0">
+            <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-center lg:text-left">
+              <p>©2024 Viroka, Designed by <span className="text-[#E5E5E5]">Muhaimin UIUX</span></p>
+              <span className="hidden sm:inline text-white/20">|</span>
+              <p>Developed by <span className="text-[#E5E5E5]">Imtiaz Ahmed</span></p>
+            </div>
+            <div className="flex gap-6 lg:gap-8 mt-2 lg:mt-0">
+              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            </div>
           </div>
         </div>
       </div>

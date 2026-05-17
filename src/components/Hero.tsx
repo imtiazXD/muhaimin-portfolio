@@ -96,20 +96,20 @@ export function Hero() {
             </p>
             
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-[13px] lg:text-[14px] font-bold text-[#c0c0c0] tracking-wide">
-              <span className="flex items-center gap-2"><span className="text-[#D49474] font-bold">/</span> <a href="#" className="hover:text-white transition-colors">Figma</a></span>
-              <span className="flex items-center gap-2"><span className="text-[#D49474] font-bold">/</span> <a href="#" className="hover:text-white transition-colors">Behance</a></span>
-              <span className="flex items-center gap-2"><span className="text-[#D49474] font-bold">/</span> <a href="#" className="hover:text-white transition-colors">Linkedin</a></span>
-              <span className="flex items-center gap-2"><span className="text-[#D49474] font-bold">/</span> <a href="#" className="hover:text-white transition-colors">Dribbble</a></span>
+              <span className="flex items-center gap-2"><span className="text-[#D49474] font-bold">/</span> <a href="https://www.figma.com/design/nmnrv3ZwdPWbVPR0aJHHUj/Figma-Portfolio?node-id=0-1&p=f&t=T2ZxAhUdLr0NaVGb-0" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Figma</a></span>
+              <span className="flex items-center gap-2"><span className="text-[#D49474] font-bold">/</span> <a href="https://www.behance.net/Muhaimin_UIUX" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Behance</a></span>
+              <span className="flex items-center gap-2"><span className="text-[#D49474] font-bold">/</span> <a href="https://www.linkedin.com/in/syed-muhaimin-615336341/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Linkedin</a></span>
+              <span className="flex items-center gap-2"><span className="text-[#D49474] font-bold">/</span> <a href="https://dribbble.com/Syed_Muhaimin" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Dribbble</a></span>
             </div>
           </div>
 
           {/* Left/Mobile-Bottom: Contact Info */}
           <div className="flex flex-col gap-2.5 text-sm md:text-[15px] font-bold text-[#E5E5E5] tracking-wide order-2 lg:order-1 mt-4 lg:mt-0">
             <p className="flex flex-col lg:flex-row items-center gap-1 lg:gap-2">
-              <span className="opacity-70 font-medium">Gmail:</span> muhaiminhussain30@gmail.com
+              <span className="opacity-70 font-medium">Gmail:</span> <a href="mailto:muhaiminhussain30@gmail.com" className="hover:text-[#D49474] transition-colors">muhaiminhussain30@gmail.com</a>
             </p>
             <p className="flex flex-col lg:flex-row items-center gap-1 lg:gap-2">
-              <span className="opacity-70 font-medium">Whats app:</span> 01825297541
+              <span className="opacity-70 font-medium">Whats app:</span> <a href="https://wa.me/8801825297541" target="_blank" rel="noopener noreferrer" className="hover:text-[#D49474] transition-colors">01825297541</a>
             </p>
           </div>
         </div>

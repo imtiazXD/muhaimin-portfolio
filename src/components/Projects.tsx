@@ -16,7 +16,7 @@ const projects = [
     image: sosoImg,
     platform: 'Figma',
     platformIcon: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg',
-    link: '#'
+    link: 'https://www.figma.com/design/nmnrv3ZwdPWbVPR0aJHHUj/Figma-Portfolio?node-id=0-1&p=f&t=T2ZxAhUdLr0NaVGb-0'
   },
   {
     title: 'Korto',
@@ -24,7 +24,7 @@ const projects = [
     image: kortoImg,
     platform: 'Figma',
     platformIcon: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg',
-    link: '#'
+    link: 'https://www.figma.com/design/nmnrv3ZwdPWbVPR0aJHHUj/Figma-Portfolio?node-id=0-1&p=f&t=T2ZxAhUdLr0NaVGb-0'
   },
   {
     title: 'Heyazah',
@@ -32,7 +32,7 @@ const projects = [
     image: heyazahImg,
     platform: 'Figma',
     platformIcon: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg',
-    link: '#'
+    link: 'https://www.figma.com/design/nmnrv3ZwdPWbVPR0aJHHUj/Figma-Portfolio?node-id=0-1&p=f&t=T2ZxAhUdLr0NaVGb-0'
   },
   {
     title: 'CareEase',
@@ -40,7 +40,7 @@ const projects = [
     image: careeaseImg,
     platform: 'Figma',
     platformIcon: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg',
-    link: '#'
+    link: 'https://www.figma.com/design/nmnrv3ZwdPWbVPR0aJHHUj/Figma-Portfolio?node-id=0-1&p=f&t=T2ZxAhUdLr0NaVGb-0'
   },
   {
     title: 'Health Care',
@@ -48,7 +48,7 @@ const projects = [
     image: healthcareImg,
     platform: 'Figma',
     platformIcon: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg',
-    link: '#'
+    link: 'https://www.figma.com/design/nmnrv3ZwdPWbVPR0aJHHUj/Figma-Portfolio?node-id=0-1&p=f&t=T2ZxAhUdLr0NaVGb-0'
   },
   {
     title: 'Morph',
@@ -56,7 +56,7 @@ const projects = [
     image: morphImg,
     platform: 'Figma',
     platformIcon: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg',
-    link: '#'
+    link: 'https://www.figma.com/design/nmnrv3ZwdPWbVPR0aJHHUj/Figma-Portfolio?node-id=0-1&p=f&t=T2ZxAhUdLr0NaVGb-0'
   }
 ];
 
@@ -100,19 +100,18 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ y: -10 }}
-            className="flex flex-col group cursor-pointer"
+            className="flex flex-col cursor-pointer"
           >
             <div className="aspect-[4/3] w-full overflow-hidden mb-6 bg-[#1A1A1A] relative">
               <img 
                 src={project.image} 
                 alt={project.title} 
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                className="w-full h-full object-contain opacity-90"
               />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+              <div className="absolute inset-0 bg-black/20" />
             </div>
             
-            <h3 className="text-2xl font-bold text-[#E5E5E5] mb-4 group-hover:text-[#D49474] transition-colors">
+            <h3 className="text-2xl font-bold text-[#E5E5E5] mb-4">
               {project.title}
             </h3>
             
@@ -121,28 +120,22 @@ export function Projects() {
             </p>
             
             <div className="mt-auto flex items-center">
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1A1A1A] group-hover:bg-[#252525] border border-white/5 transition-all group-hover:border-[#D49474]/30">
+              <a 
+                href={project.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1A1A1A] hover:bg-[#252525] border border-white/5 transition-colors cursor-pointer"
+              >
                 <div className="w-4 h-4 flex items-center justify-center">
                   <img src={project.platformIcon} alt={project.platform} className="w-full h-full object-contain" />
                 </div>
                 <span className="text-sm font-medium text-[#D49474]">{project.platform}</span>
-              </div>
+              </a>
             </div>
           </motion.div>
         ))}
       </div>
 
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="flex justify-center mt-20"
-      >
-        <button className="bg-[#D49474] text-black px-8 py-4 rounded-xl text-lg font-bold hover:bg-[#c58565] transition-colors">
-          View More Projects
-        </button>
-      </motion.div>
     </section>
   );
 }
