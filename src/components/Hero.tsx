@@ -10,8 +10,6 @@ export function Hero() {
       {/* Background glow behind image */}
       <div className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#D49474]/15 blur-[120px] rounded-full pointer-events-none z-0" />
       
-      {/* Decorative large low-opacity circle on the right */}
-      <div className="absolute top-[40%] right-[-100px] w-[300px] h-[300px] bg-[#D49474]/5 rounded-full pointer-events-none z-0" />
 
       <section id="home" className="pt-24 pb-6 md:pt-32 md:pb-8 px-6 md:px-12 lg:px-20 min-h-[100dvh] lg:h-dvh flex flex-col w-full mx-auto relative z-10 overflow-x-hidden lg:overflow-hidden">
         
