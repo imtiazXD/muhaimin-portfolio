@@ -26,7 +26,7 @@ export function Testimonial() {
   const prev = () => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 w-full mx-auto relative overflow-hidden">
+    <section id="testimonial" className="py-24 md:py-32 px-6 md:px-12 lg:px-20 w-full mx-auto relative overflow-hidden">
       <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-20 relative z-10">
         <motion.div
            initial={{ opacity: 0, x: -20 }}

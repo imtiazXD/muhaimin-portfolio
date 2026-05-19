@@ -60,15 +60,25 @@ export function Contact() {
               
               {/* Col 1 */}
               <div className="flex flex-col gap-4 lg:gap-8 pr-2 lg:pr-0">
-                {['Home', 'About', 'Experience', 'Service'].map((item) => (
-                  <a key={item} href={`#${item.toLowerCase()}`} className="text-[#A3A3A3] hover:text-white transition-colors text-[11px] lg:text-[15px] font-medium">{item}</a>
+                {[
+                  { name: 'Home', href: '#home' },
+                  { name: 'About', href: '#about' },
+                  { name: 'Experience', href: '#experience' },
+                  { name: 'Service', href: '#services' }
+                ].map((item) => (
+                  <a key={item.name} href={item.href} className="text-[#A3A3A3] hover:text-white transition-colors text-[11px] lg:text-[15px] font-medium">{item.name}</a>
                 ))}
               </div>
               
               {/* Col 2 */}
               <div className="flex flex-col gap-4 lg:gap-8 border-l border-white/5 lg:border-none pl-4 lg:pl-0 pr-2 lg:pr-0">
-                {['Project', 'Skill', 'Testimonial', 'Faq'].map((item) => (
-                  <a key={item} href={`#${item.toLowerCase()}`} className="text-[#A3A3A3] hover:text-white transition-colors text-[11px] lg:text-[15px] font-medium">{item}</a>
+                {[
+                  { name: 'Project', href: '#projects' },
+                  { name: 'Skill', href: '#skills' },
+                  { name: 'Testimonial', href: '#testimonial' },
+                  { name: 'Faq', href: '#faq' }
+                ].map((item) => (
+                  <a key={item.name} href={item.href} className="text-[#A3A3A3] hover:text-white transition-colors text-[11px] lg:text-[15px] font-medium">{item.name}</a>
                 ))}
               </div>
               
